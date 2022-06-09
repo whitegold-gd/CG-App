@@ -9,7 +9,7 @@ import com.example.medic.DI.ServiceLocator
 import com.example.medic.Domain.Model.Comment
 import com.example.medic.Domain.Model.Post
 import com.example.medic.Domain.Model.User
-import com.example.medic.Presentation.Repository.Network.MedicServer.MedicServerAPI
+import com.example.medic.Presentation.Repository.Network.MedicServer.CGServerAPI
 import com.example.medic.Presentation.Repository.Room.DAO.PostDAO
 import com.example.medic.Presentation.Repository.Room.DAO.UserDAO
 import com.example.medic.Presentation.Repository.Room.DTO.PostDTO
@@ -27,7 +27,7 @@ class PostRepository constructor(application: Application) : RepositoryTasks {
     private val postDAO: PostDAO?
     private val userDAO: UserDAO?
     private val posts: LiveData<List<PostDTO?>?>?
-    private val api: MedicServerAPI
+    private val api: CGServerAPI
 
     companion object {
         private val HOST: String = "https://medic-server-cubd-test.herokuapp.com/"
@@ -41,7 +41,7 @@ class PostRepository constructor(application: Application) : RepositoryTasks {
             .baseUrl(HOST)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
-        api = retrofit.create(MedicServerAPI::class.java)
+        api = retrofit.create(CGServerAPI::class.java)
         val database: PostRoomDatabase? = PostRoomDatabase.getDatabase(application)
         postDAO = database!!.postDAO()
         userDAO = database.userDAO()
@@ -159,7 +159,7 @@ class PostRepository constructor(application: Application) : RepositoryTasks {
                 override fun onFailure(call: Call<Boolean?>, t: Throwable) {
                     t.printStackTrace()
                     bool.setValue(false)
-                    /*PostRoomDatabase.databaseWriteExecutor.execute(() -> {
+                    /*postRoomDatabase.databaseWriteExecutor.execute(() -> {
                             postDAO.deletePost(dto);
                         });*/
                 }
@@ -300,11 +300,7 @@ class PostRepository constructor(application: Application) : RepositoryTasks {
 
     override fun addUser(user: User?) {
         val dto: UserDTO = UserDTO.convertFromUser(user)
-        PostRoomDatabase.databaseWriteExecutor.execute(object : Runnable {
-            override fun run() {
-                userDAO!!.addUser(dto)
-            }
-        })
+        PostRoomDatabase.databaseWriteExecutor.execute { userDAO!!.addUser(dto) }
     }
 
     override fun updateUser(user: User?) {

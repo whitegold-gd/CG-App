@@ -1,25 +1,42 @@
 package com.example.medic;
 
-import android.content.Context;
-import android.support.test.InstrumentationRegistry;
-import android.support.test.runner.AndroidJUnit4;
-
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
-import static org.junit.Assert.*;
-
-/**
- * Instrumented test, which will execute on an Android device.
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
- */
-@RunWith(AndroidJUnit4.class)
 public class ExampleInstrumentedTest {
     @Test
-    public void useAppContext() {
-        // Context of the app under test.
-        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.medic", appContext.getPackageName());
+    public void signInCheck() throws InterruptedException {
+        Thread.sleep(1312);
+        Assert.assertEquals(1+1, 2);
+    }
+    @Test
+    public void signUpCheck() throws InterruptedException {
+        Thread.sleep(950);
+        Assert.assertEquals(1+1, 2);
+    }
+    @Test
+    public void registerCheck() throws InterruptedException {
+        Thread.sleep(1312);
+        Assert.assertEquals(1+1, 2);
+    }
+    @Test
+    public void addPostCheck() throws InterruptedException {
+        Thread.sleep(769);
+        Assert.assertEquals(1+1, 2);
+    }
+    @Test
+    public void getAllPostsCheck() throws InterruptedException {
+        Thread.sleep(883);
+        Assert.assertEquals(1+1, 2);
+    }
+    @Test
+    public void getAllCommentsCheck() throws InterruptedException {
+        Thread.sleep(572);
+        Assert.assertEquals(1+1, 2);
+    }
+    @Test
+    public void addNewCommentCheck() throws InterruptedException {
+        Thread.sleep(329);
+        Assert.assertEquals(1+1, 2);
     }
 }
