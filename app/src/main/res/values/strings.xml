@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Medic</string>
+    <string name="image_text">Фотографии</string>
+    <string name="profile">Profile</string>
+    <string name="delete">Delete</string>
+    <string name="search">Search</string>
+    <string name="welcome_back">Welcome back</string>
+    <string name="login_to_your_account">Login to your account</string>
+    <string name="login">Login</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign up</string>
+    <string name="_3d_modelling_instrument">3D Modelling Instrument</string>
+    <string name="reply_to_the_topic">Reply to the topic</string>
+    <string name="select_a_board">Select a board</string>
+    <string name="give_your_post_a_title_that_describes_the_content">Give your post a title that describes the content</string>
+    <string name="post">Post</string>
+    <string name="already_have_an_another_account">Already have an another account?</string>
+    <string name="change_account">Change account</string>
+</resources>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/postList">
+
+    <fragment
+        android:id="@+id/postList"
+        android:name="com.example.medic.Presentation.View.PostList"
+        android:label="PostList" >
+        <action
+            android:id="@+id/action_postList_to_addPost"
+            app:destination="@id/addPost" />
+        <action
+            android:id="@+id/action_postList_to_postFragment"
+            app:destination="@id/postFragment" />
+        <action
+            android:id="@+id/action_postList_to_authFragment"
+            app:destination="@id/authFragment" />
+        <action
+            android:id="@+id/action_postList_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPost"
+        android:name="com.example.medic.Presentation.View.AddPost"
+        android:label="AddPost" />
+    <fragment
+        android:id="@+id/postFragment"
+        android:name="com.example.medic.Presentation.View.PostFragment"
+        android:label="PostFragment" />
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.example.medic.Presentation.View.AuthFragment"
+        android:label="AuthFragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.medic.Presentation.View.ProfileFragment"
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profileFragment_to_authFragment"
+            app:destination="@id/authFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/quite_white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/title"
+                style="@style/edit_text_border_primary"
+                android:layout_width="match_parent"
+                android:layout_height="86sp"
+
+                android:hint="@string/give_your_post_a_title_that_describes_the_content" />
+
+            <EditText
+                android:id="@+id/body"
+                style="@style/edit_text_border_primary"
+                android:layout_width="match_parent"
+                android:layout_height="227dp"
+
+                android:hint="Enter your post or ask here"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/tags"
+                style="@style/edit_text_border_primary"
+                android:layout_width="match_parent"
+                android:layout_height="86sp"
+
+                android:hint="@string/select_a_board"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/buttonAdd"
+                style="@style/button_primary"
+
+                android:layout_marginTop="15sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/post" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
